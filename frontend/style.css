@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: aliceblue;
+    background-color: #F4F3F3;
     display: flex;
     flex-direction: column; 
     justify-content: center;
@@ -51,12 +51,9 @@ button {
     cursor: pointer;
 }
 
-.jugar-aprender {
-    width: 100%;
-    border-color: #DD81BB;
-}
 
-.contenedor-juego {
+
+.inicio {
     display: block; 
     width: 100%;
     margin-top: 12px;
@@ -68,6 +65,7 @@ button {
 .cultura { border-color: #E57070; }
 .naturaleza { border-color: #9FC97B; }
 .lugares { border-color: #FBA417; }
+.inicio{ border-color: #433450;}
 
 @media (min-width: 360px) {
     .botones-contenedor {
@@ -79,10 +77,10 @@ button {
     background-color: #433450;
     text-align: center;
     padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 15px;
+    margin-bottom: 25px;
     width: 100%;
     max-width: 450px;
+    border: none; 
 }
 
 .titulo-principal {
@@ -92,3 +90,4 @@ button {
     color: white;
     font-weight: 800;
 }
+

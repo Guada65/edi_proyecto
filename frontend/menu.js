@@ -19,10 +19,8 @@ class MenuPrincipal extends HTMLElement {
                 <a href="cultura.html"><button class="cultura">Cultura</button></a>
                 <a href="naturaleza.html"><button class="naturaleza">Naturaleza</button></a>
                 <a href="lugares.html"><button class="lugares">Lugares Famosos</button></a>
+                <a href="index.html"><button class="inicio">Volver al Inicio</button></a>
             </div>
-            <a href="juego.html" class="contenedor-juego">
-                <button class="jugar-aprender">¡Jugá y aprendé!</button>
-            </a>
         `;
     }
 }
