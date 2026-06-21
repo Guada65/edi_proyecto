@@ -112,6 +112,25 @@ button {
     font-weight: 800;
 }
 
+.banner {
+    background: linear-gradient(to right, var(--gradien-inicio), var(--gradien-fin));
+    text-align: center;
+    padding: 18px 20px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+.banner-texto {
+    font-family: 'Grandstander Regular', serif; 
+    font-size: 1.1em;
+    font-weight: 800;
+    margin: 0;
+    color: black;
+}
+
 .foto-trajeta{
     width: 100%;
     max-width: 370px;

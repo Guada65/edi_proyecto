@@ -89,10 +89,13 @@ class BannerMendoza extends HTMLElement {
                 <p class="banner-texto">${estilo.frase}</p>
             </div>
         `;
-        customElements.define('banner-mendoza', BannerMendoza);
     }
-    
 }
+    customElements.define('banner-mendoza', BannerMendoza);
 
-
+class TarjetaInfo extends HTMLElement {
+    connectedCallback() {
+        
+    }
+}
 
