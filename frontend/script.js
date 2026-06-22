@@ -93,9 +93,5 @@ class BannerMendoza extends HTMLElement {
 }
     customElements.define('banner-mendoza', BannerMendoza);
 
-class TarjetaInfo extends HTMLElement {
-    connectedCallback() {
-        
-    }
-}
+
 
