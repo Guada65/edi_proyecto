@@ -1,14 +1,24 @@
 import express from 'express';
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
+import cors from 'cors';
+import path from 'path'; 
+import { fileURLToPath } from 'url'; 
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const __dirname = path.dirname(fileURLToPath(import.meta.url)); 
 
 app.use(express.json());
+app.use(cors());
 
+
+app.use('/img', express.static(path.join(__dirname, 'public', 'img')));
+
+const PORT = process.env.PORT || 3000;
+
+// BD
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -29,8 +39,22 @@ app.get('/api/categorias', async (req, res) => {
     }
 });
 
+app.get('/api/contenido', async (req, res) => {
+    try {
+        const query = `
+            SELECT cont.*, cat.degradado_css 
+            FROM tb_contenido cont 
+            JOIN tb_categoria cat ON cont.categoria_id = cat.id
+            ORDER BY cont.orden ASC
+        `;
+        const [results] = await pool.query(query);
+        res.json(results);
+    } catch (error) {
+        console.error("Error en BD:", error);
+        res.status(500).json({ error: "Error al obtener datos" });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
-
-app.use(express.static('public'));

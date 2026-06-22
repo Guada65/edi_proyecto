@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column; 
     min-height: 100vh;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -26,11 +26,11 @@ body {
 .menu-principal {
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     width: 100%;
     max-width: 450px;
     padding: 15px;
-    margin: 0 auto 25px auto;
+    margin: 0px auto 25px auto;
 }
 
 .botones-contenedor {
@@ -127,21 +127,38 @@ button {
     font-family: 'Grandstander Regular', serif; 
     font-size: 1.1em;
     font-weight: 800;
-    margin: 0;
+    margin: 0px;
     color: black;
 }
 
-.foto-trajeta{
-    width: 100%;
-    max-width: 370px;
-    height: 180px;
-
-    object-fit: cover ;
-    object-position: center;
-
-    border-radius: 8px;
-    display: block ;
-    margin: 15px auto ;
-
+.tarjeta-info {
+    font-family: 'Grandstander Regular', serif ;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
 }
 
+.tarjeta-header {
+    background: linear-gradient(to right, var(--gradien-inicio), var(--gradien-fin)) !important;
+    padding: 10px;
+}
+
+.tarjeta-body {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+.tarjeta-contenido {
+    flex: 1;
+}
+
+.foto-tarjeta {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
