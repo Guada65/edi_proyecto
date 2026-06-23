@@ -143,7 +143,6 @@ button {
 }
 
 .tarjeta-header {
-    background: linear-gradient(to right, var(--gradien-inicio), var(--gradien-fin)) !important;
     padding: 10px;
 }
 
@@ -157,8 +156,29 @@ button {
     flex: 1;
 }
 
-.foto-tarjeta {
+.img-tarjeta {
     width: 200px;
     height: auto;
     border-radius: 10px;
 }
+
+.footer-sitio {
+    font-family: 'Grandstander Regular', serif;
+    background-color: var(--color-base);
+    text-align: center;
+    padding: 25px 15px;
+    width: 100%;
+    border: none; 
+}
+
+.btn-inicio {
+    background: linear-gradient(to right, var(--gradien-inicio), var(--gradien-fin)); 
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: black;      
+    font-weight: bold;
+}
+
+
