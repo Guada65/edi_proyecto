@@ -25,7 +25,6 @@ class HeaderMendoza extends HTMLElement {
 }
 customElements.define('header-mendoza', HeaderMendoza);
 
-//creación del menú
 class MenuPrincipal extends HTMLElement {
     connectedCallback() {
         const base = window.location.pathname.includes('/pages/')
@@ -129,7 +128,7 @@ class Tarjeta {
             </div>
             <div class="tarjeta-body ${this.posicion}">
                 <p>${this.texto}</p>
-                <img src="http://localhost:3000/img/${this.imagen}" class="img-tarjeta">
+                <img src="http://localhost:3000/images/${this.imagen}" class="img-tarjeta">
             </div>
         </div>`;
     }
