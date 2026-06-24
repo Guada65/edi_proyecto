@@ -14,7 +14,10 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use('/img', express.static(path.join(__dirname, 'public', 'img')));
+app.use(
+    '/images',
+    express.static(path.join(__dirname, '..', 'frontend', 'images'))
+);
 
 const pool = mysql.createPool({
     host: process.env.DB_HOST,

@@ -28,14 +28,17 @@ customElements.define('header-mendoza', HeaderMendoza);
 //creación del menú
 class MenuPrincipal extends HTMLElement {
     connectedCallback() {
+        const base = window.location.pathname.includes('/pages/')
+        ? '../'
+        : '';
         this.innerHTML = `
             <div class="botones-contenedor">
-                <a href="historia.html"><button class="historia">Historia</button></a>
-                <a href="geografia.html"><button class="geografia">Geografía</button></a>
-                <a href="uva.html"><button class="uva">La Uva</button></a>
-                <a href="cultura.html"><button class="cultura">Cultura</button></a>
-                <a href="naturaleza.html"><button class="naturaleza">Naturaleza</button></a>
-                <a href="lugares.html"><button class="lugares">Lugares Famosos</button></a>
+                <a href="${base}pages/historia.html"><button class="historia">Historia</button></a>
+                <a href="${base}pages/geografia.html"><button class="geografia">Geografía</button></a>
+                <a href="${base}pages/uva.html"><button class="uva">La Uva</button></a>
+                <a href="${base}pages/cultura.html"><button class="cultura">Cultura</button></a>
+                <a href="${base}pages/naturaleza.html"><button class="naturaleza">Naturaleza</button></a>
+                <a href="${base}pages/lugares.html"><button class="lugares">Lugares Famosos</button></a>
             </div>
         `;
         this.marcarActivo(); 
@@ -53,8 +56,6 @@ class MenuPrincipal extends HTMLElement {
 }
 customElements.define('menu-mendoza', MenuPrincipal);
 
-
-//creación del la frase inicial  //``
 class BannerMendoza extends HTMLElement {
     connectedCallback() {
         const categoria = this.getAttribute('categoria') || 'inicio'
@@ -111,13 +112,14 @@ class BannerMendoza extends HTMLElement {
 
 
 class Tarjeta { 
-    constructor(id, categoria_id, titulo, texto, imagen, degradado) {
+    constructor(id, categoria_id, titulo, texto, imagen, degradado, posicion) {
         this.id = id;
         this.categoria_id = categoria_id;
         this.titulo = titulo;
         this.texto = texto;
         this.imagen = imagen;
         this.degradado = degradado;
+        this.posicion = posicion; 
     }
     crear() {
         return `
@@ -125,7 +127,7 @@ class Tarjeta {
             <div class="tarjeta-header" style="background: ${this.degradado};">
                 <h2>${this.titulo}</h2>
             </div>
-            <div class="tarjeta-body">
+            <div class="tarjeta-body ${this.posicion}">
                 <p>${this.texto}</p>
                 <img src="http://localhost:3000/img/${this.imagen}" class="img-tarjeta">
             </div>
@@ -140,7 +142,7 @@ class ServicioApi {
             const respuesta = await fetch(`${this.BD_URL}/contenido/${catId}`); 
             const datos = await respuesta.json();
             return datos.map(d => new Tarjeta(
-                d.id, d.categoria_id, d.titulo, d.texto_largo, d.imagen_url, d.degradado_css
+                d.id, d.categoria_id, d.titulo, d.texto_largo, d.imagen_url, d.degradado_css, d.posicion
             )); 
         } catch (error) {
             console.error('Error:', error);

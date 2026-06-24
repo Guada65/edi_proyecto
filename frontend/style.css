@@ -19,6 +19,35 @@ body {
     box-sizing: border-box;
 }
 
+.carrusel {
+    width: 430px;
+    height: 190px;
+    overflow: hidden; 
+    margin: auto; 
+}
+
+.carrusel-contenedor {
+    display: flex;
+    gap: 7px; 
+    animation: deslizar 10s infinite linear;
+}
+
+.carrusel-contenedor img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover; 
+    border-radius: 8px;
+}
+
+@keyframes deslizar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-870px); 
+    }
+}
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -170,6 +199,20 @@ button {
     padding: 20px;
     gap: 20px;
 }
+
+.tarjeta-body.derecha {
+    flex-direction: row;
+}
+
+.tarjeta-body.izquierda {
+    flex-direction: row-reverse;
+}
+
+.tarjeta-body.arriba {
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
 .tarjeta-contenido {
     flex: 1;
 }
