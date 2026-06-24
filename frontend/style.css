@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Grandstander Regular', serif;
     background-color: #F4F3F3;
     display: flex;
     flex-direction: column; 
@@ -176,6 +176,53 @@ button {
     font-weight: 800;
     margin: 0px;
     color: black;
+}
+
+.sabias-contenedor {
+    max-width: 450px;
+    margin: 20px auto;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.s-titulo {
+    font-family: 'Grandstander Regular', serif;
+    background-color: #866F9A; 
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 20px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.s-t-g, .s-t-n, .s-t-c {
+    font-family: 'Grandstander Regular', serif;
+    background-color: #ffffff; 
+    border-radius: 20px;       
+    padding: 22px 25px;        
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+.s-t-g {
+    border: 2px solid #5D95FE; 
+}
+
+.s-t-n {
+    border: 2px solid #9FC97B; 
+}
+
+.s-t-c {
+    border: 2px solid #E57070; 
+}
+
+.footer-inicio {
+    font-family: 'Grandstander Regular', serif;;
+    background-color: #866F9A ;
+    text-align: center;
 }
 
 .tarjeta-info {
