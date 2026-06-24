@@ -1,5 +1,5 @@
 const colores_cat = {
-    inicio: '#433450', 
+    inicio: '#866F9A', 
     historia: '#FFE683',
     geografia: '#94B9FF', 
     uva: '#BF86D2',
@@ -38,8 +38,18 @@ class MenuPrincipal extends HTMLElement {
                 <a href="lugares.html"><button class="lugares">Lugares Famosos</button></a>
             </div>
         `;
-        
+        this.marcarActivo(); 
     }
+    marcarActivo() {
+    const pagina = window.location.pathname; 
+    const botones = this.querySelectorAll('button');
+    botones.forEach(boton => {
+      const link = boton.parentElement.getAttribute('href');
+      if (pagina.endsWith(link)) {
+        boton.classList.add('active');
+      }
+    });
+  }
 }
 customElements.define('menu-mendoza', MenuPrincipal);
 
@@ -130,7 +140,7 @@ class ServicioApi {
             const respuesta = await fetch(`${this.BD_URL}/contenido/${catId}`); 
             const datos = await respuesta.json();
             return datos.map(d => new Tarjeta(
-                d.id, d.categoria_id, d.titulo, d.texto_largo, d.imagen_url, d.degradado_css 
+                d.id, d.categoria_id, d.titulo, d.texto_largo, d.imagen_url, d.degradado_css
             )); 
         } catch (error) {
             console.error('Error:', error);
@@ -150,7 +160,7 @@ class FooterMendoza extends HTMLElement {
         this.innerHTML = `
             <footer class="footer-sitio">
                 <p>¡Seguí explorando mendoza!</p>
-                <a href="index.html" class="btn-inicio">IR AL INICIO →</a>
+                <a href="../index.html" class="btn-inicio">IR AL INICIO →</a>
             </footer>
         `;
 

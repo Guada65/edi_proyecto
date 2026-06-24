@@ -50,6 +50,24 @@ body {
     width: 100%;
 }
 
+.historia.active   { 
+    background: #FFE683; }
+
+.geografia.active  { 
+    background: #5D95FE; }
+
+.uva.active        { 
+    background: #BC7FD0; }
+
+.cultura.active    { 
+    background: #E57070; }
+
+.naturaleza.active { 
+    background: #9FC97B; }
+
+.lugares.active    { 
+    background: #FBA417; }
+
 button {
     font-family: 'Grandstander Regular', serif;
     background-color: white;
@@ -180,5 +198,7 @@ button {
     color: black;      
     font-weight: bold;
 }
+
+
 
 

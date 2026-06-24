@@ -4,24 +4,26 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Histora</title>
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="../style.css">
         </head>
 
         <body>
-            <header-mendoza categoria="geografia"></header-mendoza>
+            <header-mendoza categoria="historia"></header-mendoza>
 
             <div class="menu-principal"><menu-mendoza></menu-mendoza></div>
 
-            <banner-mendoza categoria="geografia"></banner-mendoza>
+            <banner-mendoza categoria="historia"></banner-mendoza>
 
             <div id="contenedor-tarjetas"></div>
 
-            <script src="script.js"></script>
+            <footer-mendoza categoria="historia"></footer-mendoza>
+
+            <script src="../script.js"></script>
 
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
                     const contenedor = document.getElementById('contenedor-tarjetas');
-                    const tarjetas = await ServicioApi.obtenerContenido(2); 
+                    const tarjetas = await ServicioApi.obtenerContenido(1); 
                     tarjetas.forEach(t => {
                         contenedor.innerHTML += t.crear();
                         });

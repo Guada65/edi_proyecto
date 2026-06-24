@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Naturaleza</title>
+            <link rel="stylesheet" href="../style.css">
+        </head>
+
+        <body>
+            <header-mendoza categoria="naturaleza"></header-mendoza>
+
+            <div class="menu-principal"><menu-mendoza></menu-mendoza></div>
+
+            <banner-mendoza categoria="naturaleza"></banner-mendoza>
+
+            <div id="contenedor-tarjetas"></div>
+
+            <footer-mendoza categoria="naturaleza"></footer-mendoza>
+
+            <script src="../script.js"></script>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                    const contenedor = document.getElementById('contenedor-tarjetas');
+                    const tarjetas = await ServicioApi.obtenerContenido(5); 
+                    tarjetas.forEach(t => {
+                        contenedor.innerHTML += t.crear();
+                        });
+                });
+            </script>
+</body>
+    </html>
